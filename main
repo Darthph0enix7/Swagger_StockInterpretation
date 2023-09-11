@@ -1,1 +1,70 @@
-
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Stock and News API
+  description: An API to get stock data and news for a given date and stock symbol.
+paths:
+  /stock:
+    get:
+      summary: Get stock data for a given symbol and time interval
+      parameters:
+        - name: function
+          in: query
+          description: The time series function 
+          required: false
+          schema:
+            type: string
+        - name: symbol
+          in: query
+          description: The stock symbol (e.g., IBM, AAPL)
+          required: true
+          schema:
+            type: string
+        - name: interval
+          in: query
+          description: Time interval between two consecutive data points 
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  stock_data:
+                    type: object
+  /news:
+    get:
+      summary: Get news for a given stock symbol and time range
+      parameters:
+        - name: tickers
+          in: query
+          description: Stock symbols to filter news by (e.g., IBM, AAPL)
+          required: false
+          schema:
+            type: string
+        - name: time_from
+          in: query
+          description: Start time for news articles 
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  news_data:
+                    type: array
+                    items:
+                      type: object
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/KALINSAZ123321/Test/1.0.0
