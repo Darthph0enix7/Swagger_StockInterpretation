@@ -1,0 +1,17 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Stock and News Information",
+    "name_for_model": "StockAndNewsInfo",
+    "description_for_human": "Get stock data and news articles for given stock symbols and time intervals.",
+    "description_for_model": "Retrieve stock data and news articles for given stock symbols and time intervals. Display results using markdown tables for easier interpretation.",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "[YOUR_DOMAIN, must be HTTPS]/openapi.yaml"
+    },
+    "logo_url": "[YOUR_DOMAIN, must be HTTPS]/logo.png",
+    "contact_email": "support@example.com",
+    "legal_info_url": "https://example.com/legal"
+}
