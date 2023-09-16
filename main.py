@@ -13,7 +13,7 @@ def get_stock_data():
     month = request.args.get('month')
     outputsize = request.args.get('outputsize', 'compact')
     datatype = request.args.get('datatype', 'json')
-    apikey = 'YOUR_API_KEY'
+    apikey = 'PQDWQJ5SGD9FMORY'
 
     url = f"https://www.alphavantage.co/query?function={function}&symbol={symbol}&interval={interval}&adjusted={adjusted}&extended_hours={extended_hours}&apikey={apikey}"
     
